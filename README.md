@@ -16,36 +16,25 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
 
        
         // SPDX-License-Identifier: MIT
-           pragma solidity 0.8.18;
+       // Compatible with OpenZeppelin Contracts ^5.0.0
+          pragma solidity ^0.8.20;
 
-     contract Error {
-        uint public i = 12;
-        function testRequire(uint _i) public 
-        {
-        require(_i > 10, "Input must be greater than 10");
-        i = i+10;
-        }
+        import "@openzeppelin/contracts@5.0.2/token/ERC20/ERC20.sol";
+        import "@openzeppelin/contracts@5.0.2/token/ERC20/extensions/ERC20Burnable.sol";
+        import "@openzeppelin/contracts@5.0.2/access/Ownable.sol";
 
-    function testRevert(uint _i) public 
-       {
+       contract MyToken is ERC20, ERC20Burnable, Ownable {
+           constructor(address initialOwner)
+               ERC20("MyToken", "MTK")
+               Ownable(initialOwner)
+           {}
 
-        i=i+10;
-        if (_i <= 10) {
-            revert("Input must be greater than 10");
-        }
-      }
+           function mint(address to, uint256 amount) public onlyOwner {
+               _mint(to, amount);
+           }
+       }
 
-
-    function testAssert() public
-    {
-
-        assert(i >= 10);
-        i=i+10;
-    } 
-
-     }
-
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.18" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.20" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
 
 Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. 
 Once the contract is deployed, you can interact with it by calling the testrequire, testrevert, testassert functions.
