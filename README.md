@@ -34,11 +34,9 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
            }
        }
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.20" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.20" (or another compatible version), and then click on the "Compile" button.
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. 
-Once the contract is deployed, you can interact with it by calling the testrequire, testrevert, testassert functions.
-
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar but first select the network to the testnet of "Avalanche Network" and connect your "Metmask" wallet. Once the contract is deployed, you can interact with it by calling mint, burn, transfer, balance functions.
 ## Authors
 
 Sachin Singh
