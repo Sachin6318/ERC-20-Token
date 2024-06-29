@@ -25,7 +25,7 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
 
        contract MyToken is ERC20, ERC20Burnable, Ownable {
            constructor(address initialOwner)
-               ERC20("MyToken", "MTK")
+               ERC20("pikachu", "pika")
                Ownable(initialOwner)
            {}
 
